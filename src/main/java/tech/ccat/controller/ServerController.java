@@ -101,6 +101,7 @@ public class ServerController {
         commandRegistry.registerCommand(new LogsCommand(loggingService));
         commandRegistry.registerCommand(new StatusCommand(moduleService));
         commandRegistry.registerCommand(switchCommand);
+        commandRegistry.registerCommand(new RconCommand(moduleService, loggingService));
         commandRegistry.registerCommand(new HelpCommand(commandRegistry, switchCommand));
         commandRegistry.registerCommand(new ExitCommand(this));
     }
