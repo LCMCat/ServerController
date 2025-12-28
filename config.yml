@@ -1,0 +1,19 @@
+outputCacheSize: 1000
+autoStartDelay: 5000
+
+modules:
+  - name: "web-server"
+    startCommand: "echo Starting web server... && ping -n 10 127.0.0.1 > nul"
+    stopCommand: "stop"
+    autoStart: true
+    autoStartDelay: 0
+    autoRestart: true
+    outputCacheSize: 500
+
+  - name: "database"
+    startCommand: "echo Starting database... && ping -n 5 127.0.0.1 > nul"
+    stopCommand: "shutdown"
+    autoStart: true
+    autoStartDelay: 2000
+    autoRestart: false
+    outputCacheSize: 300
